@@ -1,0 +1,16 @@
+.colorForm {
+    background-color: lightblue;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: rgb(65, 237, 249);
+}
+
+.button {
+    color: rgb(0, 55, 255);
+    background-color: bisque;
+}
