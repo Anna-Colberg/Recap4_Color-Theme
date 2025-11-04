@@ -18,3 +18,5 @@ For issue `#7: Fetch API to Check If Contrast Is Okay`, you will be using [are m
 ```bash
 https://www.aremycolorsaccessible.com/api-page
 ```
+
+_______________________________________________
