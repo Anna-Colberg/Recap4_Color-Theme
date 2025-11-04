@@ -30,8 +30,8 @@ function handleDeleteColor(idToDelete) {  //Löschfunktion, wird benötigt für 
       {colors.map((color) => {        //alle Farbelemente werden durchsucht und rendert Color-Komponente
        return (
        <Color key={color.id}          //eindeutiger Schlüssel für die Listen.id
-       color={color} 
-       onDelete={() => handleDeleteColor(color.id)}/>
+       color={color}                  //übergabe von Objekt und Komponente
+       onDelete={() => handleDeleteColor(color.id)}/> //Löschfunktion wird ausgeführt, aktuellen Farbkarte über die ID
        );
       })}
     </>
