@@ -4,23 +4,23 @@ import AddColor from "./ColorInput";
 
 
 export default function ColorForm({onSubmitColor, initialData = { role: "role", hex: "#000000", contrastText: "#ffffff" },
-}) {
+}) {        //Probs: onSubmitColor(Funktion zum aufrufen) und initialData (für role, hex und contrastText)
     function handleSubmit(event) {
-        event.preventDefault();
+        event.preventDefault();         //verhindert dass die Seite neu lädt
         console.log("GESENDET")
-        const formData = new FormData ( event.target );
-        const data = Object.fromEntries( formData );
-        onSubmitColor(data);
+        const formData = new FormData ( event.target ); //erstellt ein Objekt
+        const data = Object.fromEntries( formData );    //wandelt formData in ein JS-Objekt um
+        onSubmitColor(data);                            //ruft die Funktion auf, übergibt die Daten(data) dem Formular
     }
 
-    return (
-        <form className="colorForm" onSubmit={handleSubmit}>
+    return (                                                //onSubmit={handleSubmit}- mit dem type vom Button verknüpft
+        <form className="colorForm" onSubmit={handleSubmit}>  
             <label htmlFor="role">Rolle</label>
             <input 
-            id="role"
-            name="role"  
+            id="role"                           //mit htmlFor(<label>) verknüpft
+            name="role"                         
             type="text" 
-            defaultValue={initialData.role}
+            defaultValue={initialData.role}     //Anfangswert aus Probs
             />
             <br />
             <label htmlFor="hex">Hexadezimalwert</label>
@@ -39,8 +39,8 @@ export default function ColorForm({onSubmitColor, initialData = { role: "role", 
             <br />
             <button 
             className="button" 
-            type="submit">
-            Hinzufügen</button>
+            type="submit"                       //löst den handleSubmit aus
+            >Hinzufügen</button>
         </form>
     )
 }
