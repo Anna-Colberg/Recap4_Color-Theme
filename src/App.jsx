@@ -1,11 +1,16 @@
 import { initialColors } from "./lib/colors";
-import { useState } from "react";
+/* import { useState } from "react"; */
 import Color from "./Components/Color/Color";
 import ColorForm from "./Components/ColorForm";
+import useLocalStorageState from "use-local-storage-state";
 import "./App.css";
 
+
+
 export default function App() {
-  const [colors, setColors] = useState(initialColors); //initialColors ist meine Farbpalette (s.colors.js)
+  const [colors, setColors] = useLocalStorageState("colors", { defaultValue: initialColors}); //initialColors ist meine Farbpalette (s.colors.js)
+
+
 
   function handleSubmitColor(colorData) {             //wird ausgeführt, sobald im Formular eine neue Karte erstellt wird
     const newElement = {
@@ -20,13 +25,12 @@ export default function App() {
     console.log("DELETE");                                        //es wird also nur die Karte gelöscht, die angeklickt wurde, keine weitere oder andere, da hier auf die ID vermerkt wurde
   }
 
-  function handleUpdateColor(updatedColor) {          
+  function handleUpdateColor(updatedColor, updatedColorId) {          
     const updatedColors = colors.map((color) => {
-      if (color.id === updatedColor.id) {
-        return updatedColor;
-      } else {
-        return color;
+      if (color.id === updatedColorId) {    // merge the updated fields into the existing color object
+        return { ...color, ...updatedColor };
       }
+      return color;
     });
     setColors(updatedColors);
   }
@@ -40,9 +44,9 @@ export default function App() {
             key={color.id}                                //eindeutiger Schlüssel für die Listen.id
             color={color}                                 //übergabe von Objekt und Komponente
             onDelete={() => handleDeleteColor(color.id)}  //Löschfunktion wird ausgeführt, aktuellen Farbkarte über die ID
-            onUpdate={handleUpdateColor}
+            onUpdated={handleUpdateColor}
           />
-        )
+      )
       )}
     </>
   );
