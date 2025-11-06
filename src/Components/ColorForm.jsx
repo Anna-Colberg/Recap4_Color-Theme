@@ -21,7 +21,7 @@ export default function ColorForm({ onSubmitColor, initialData = { role: "role",
         defaultValue={initialData.role} //Anfangswert aus Probs
       />
       <br />
-      <label htmlFor="hex">Hexadezimalwert</label>
+      <label htmlFor="hex">Hexa</label>
       <AddColor 
        id="hex" 
        name="hex" 
@@ -35,7 +35,7 @@ export default function ColorForm({ onSubmitColor, initialData = { role: "role",
       />
       <br />
       <button
-        className="button"
+        className="add_button"
         type="submit"                   //löst den handleSubmit aus
       >Hinzufügen
       </button>
