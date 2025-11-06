@@ -1,9 +1,17 @@
 body {
   font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   padding: 10px;
+  background-color: rgb(166, 144, 238);
 }
 
 h1 {
   text-align: center;
+  padding: 2px;
+  right: 0;
+  left: 0;
+  top: 0;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border: solid;
+  background-color: chocolate;
+  position: sticky;
 }

@@ -2,13 +2,20 @@
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin: 10px;
     padding: 30px;
+    background-color: lightblue;
+    border: 2px solid blueviolet;
+    border-radius: 10rem;
+    text-align: center;
+    
 }
 
-.button:hover {
-    background-color: rgb(65, 237, 249);
-}
 
-.button {
+.add_button {
     color: rgb(0, 55, 255);
     background-color: bisque;
+    border: 2px dotted black;
+    border-radius: 1rem;
+}
+.add_button:hover {
+    background-color: rgb(65, 237, 249);
 }
